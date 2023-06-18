@@ -78,10 +78,26 @@
 		<input type="text" id="studNum" name="studNum">
 		<label for="password">Password</label>
 		<input type="password" id="password" name="password">
-		<button type="button" onclick="location.href='CCSchat.html';">Log In</button>
+		<button type="button" onclick="validateLogin()">Log In</button>
 	</form>
 	<div class="footer">
 		<p>&copy; 2023 CCS Guide. All rights reserved.</p>
 	</div>
+
+	<script>
+		function validateLogin() {
+			var studentNumInput = document.getElementById("studNum").value;
+			var passwordInput = document.getElementById("password").value;
+
+			// Check if student number and password match the desired values
+			if (studentNumInput === "02200084" && passwordInput === "Testing101") {
+				// Redirect to CCSChat.html
+				window.location.href = "CCSChat.html";
+			} else {
+				// Show error message
+				alert("Incorrect Student Number or Password");
+			}
+		}
+	</script>
 </body>
 </html>
